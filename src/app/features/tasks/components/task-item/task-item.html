@@ -1,0 +1,8 @@
+<ui-card>
+  <div class="flex items-center gap-3">
+    <span class="flex-1" [class.text-emerald-600]="task.done" [class.line-through]="task.done">
+      {{ task.title }}
+    </span>
+    <ui-badge [variant]="variantFrom(task.priority)">{{ task.priority }}</ui-badge>
+  </div>
+</ui-card>

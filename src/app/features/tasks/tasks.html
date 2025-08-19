@@ -1,0 +1,49 @@
+<section class="mx-auto max-w-3xl p-4 sm:p-6">
+  <div class="mb-4 flex items-end justify-between gap-3">
+    <h1 class="text-xl font-semibold">Mes tâches</h1>
+
+    <!-- Compteurs (Bonus 2) -->
+    <div class="text-sm text-slate-700">
+      <span class="mr-3">
+        Total :
+        <strong>{{ tasks.length }}</strong>
+      </span>
+      <span>
+        Terminées :
+      </span>
+      <strong>{{ completedTasks }}</strong>
+    </div>
+  </div>
+
+  <!-- Filtres (Bonus 3) -->
+  <div class="mb-4 flex flex-wrap items-center gap-2">
+    <button class="btn"
+            [class.btn-primary]="filter==='all'"
+            (click)="setFilter('all')">Toutes</button>
+
+    <button class="btn"
+            [class.btn-primary]="filter==='haute'"
+            (click)="setFilter('haute')">Haute priorité</button>
+
+    <button class="btn"
+            [class.btn-primary]="filter==='moyenne'"
+            (click)="setFilter('moyenne')">Moyenne priorité</button>
+
+    <button class="btn"
+            [class.btn-primary]="filter==='basse'"
+            (click)="setFilter('basse')">Basse priorité</button>
+  </div>
+
+  <!-- Liste (utilise la liste filtrée) -->
+  @if (filteredTasks.length === 0) {
+    <p class="italic text-slate-500">Aucune tâche disponible</p>
+  } @else {
+    <ul class="divide-y divide-slate-200 rounded-xl border border-slate-200 bg-white">
+      @for (t of filteredTasks; track t.title) {
+        <li class="p-3 sm:p-4">
+          <app-task-item [task]="t" />
+        </li>
+      }
+    </ul>
+  }
+</section>

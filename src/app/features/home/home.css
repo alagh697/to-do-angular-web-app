@@ -1,0 +1,4 @@
+/* Exemple d’ajout local */
+@layer components {
+  .hero { @apply text-2xl font-semibold; }
+}
