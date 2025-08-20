@@ -39,9 +39,12 @@
     <p class="italic text-slate-500">Aucune tâche disponible</p>
   } @else {
     <ul class="divide-y divide-slate-200 rounded-xl border border-slate-200 bg-white">
-      @for (t of filteredTasks; track t.title) {
-        <li class="p-3 sm:p-4">
-          <app-task-item [task]="t" />
+      @for (task of filteredTasks; track task.title) {
+        <li class="p-3 sm:p-4" [class.bg-green-300]="selectedTask?.id === task?.id">
+          <app-task-item 
+          [task]="task"
+          (selected)="onTaskSelected(task)"
+          />
         </li>
       }
     </ul>
