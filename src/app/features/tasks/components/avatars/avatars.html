@@ -1,0 +1,11 @@
+<div class="flex flex-col items-center justify-center">
+    <div class="flex -space-x-4">
+        @for (member of members; track $index){
+        <app-avatar-item
+        imageUrl="https://thispersondoesnotexist.com/"
+        />
+        }
+        <span
+            class="flex items-center justify-center w-12 h-12 font-semibold border rounded-full dark:bg-gray-50 dark:text-gray-800 dark:border-gray-300">+3</span>
+    </div>
+</div>

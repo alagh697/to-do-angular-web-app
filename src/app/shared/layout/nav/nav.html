@@ -1,0 +1,9 @@
+<nav class="flex items-center gap-3 text-sm">
+      @for (route of appRoutes; track $index) {
+        <app-nav-link
+        [route]="route"
+        />
+      }
+      
+      
+    </nav>

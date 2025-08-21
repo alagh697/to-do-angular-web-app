@@ -1,1 +1,15 @@
-<p>marketplace works!</p>
+<p>
+    Total de likes: {{user.like}}
+</p>
+<app-user-card
+[firstName]="user.firstName"
+[grade]="user.grade"
+(liked)="incrementLike()"
+/>
+
+<div>
+    <button class="btn" (click)="setGrade(7)">7</button>
+    <button class="btn" (click)="setGrade(14)">14</button>
+</div>
+
+<app-product-list/>

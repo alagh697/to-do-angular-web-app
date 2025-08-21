@@ -1,0 +1,21 @@
+<section>
+    <div
+    class="flex flex-col border border-black/30 rounded-md p-6"
+    >
+    <div>
+        <p>
+            Bonjour {{firstName}}
+        </p>
+
+        <button class="btn" (click)="like()">
+            Like
+        </button>
+</div>
+        <div>
+           <p>Note (/20): {{grade}}</p> 
+           <span  [class.text-green-500]="status==='Admis'">
+            {{status}}
+           </span>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,14 @@
+<h2>Produits</h2>
+<p>Panier : {{ cart.length }} article(s)</p>
+
+<ul class=" w-full "> 
+  @for (product of products; track product.id) {
+   
+    <li>
+      <app-product-list-item
+        [product]="product"
+        (addToCart)="addProductToCart(product)"
+      ></app-product-list-item>
+    </li>
+  }
+</ul>

@@ -3,11 +3,12 @@ import { UiCardComponent } from '../../../../shared/ui/card/card';
 import { UiBadgeComponent } from '../../../../shared/ui/badge/badge';
 import { Task } from '../../models/task';
 import { FormatDatePipe } from '../../../../shared/pipes/format-date-pipe';
+import { Avatars } from '../avatars/avatars';
 
 @Component({
   standalone: true,
   selector: 'app-task-item',
-  imports: [UiCardComponent, UiBadgeComponent, FormatDatePipe],
+  imports: [UiCardComponent, UiBadgeComponent, FormatDatePipe, Avatars],
   templateUrl: './task-item.html',
   styleUrls: ['./task-item.css'],
 })

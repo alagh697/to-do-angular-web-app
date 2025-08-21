@@ -32,6 +32,8 @@
     <button class="btn"
             [class.btn-primary]="filter==='basse'"
             (click)="setFilter('basse')">Basse priorité</button>
+
+            <app-avatars/>
   </div>
 
   <!-- Liste (utilise la liste filtrée) -->
@@ -39,7 +41,7 @@
     <p class="italic text-slate-500">Aucune tâche disponible</p>
   } @else {
     <ul class="divide-y divide-slate-200 rounded-xl border border-slate-200 bg-white">
-      @for (task of filteredTasks; track task.title) {
+      @for (task of filteredTasks; track task.id) {
         <li class="p-3 sm:p-4" [class.bg-green-300]="selectedTask?.id === task?.id">
           <app-task-item 
           [task]="task"

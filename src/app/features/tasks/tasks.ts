@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { TaskItemComponent } from './components/task-item/task-item';
 import { Task } from './models/task';
+import { Avatars } from './components/avatars/avatars';
 
 type Filter = 'all' | 'haute' | 'moyenne' | 'basse';
 
 @Component({
   standalone: true,
   selector: 'app-tasks-page',
-  imports: [TaskItemComponent],
+  imports: [TaskItemComponent, Avatars],
   templateUrl: './tasks.html',
   styleUrls: ['./tasks.css'],
 })
